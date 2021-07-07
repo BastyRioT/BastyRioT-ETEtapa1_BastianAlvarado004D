@@ -1,0 +1,15 @@
+html {
+    height: 100%;
+}
+
+footer{
+    text-align: center;
+}
+
+.navbar-nav{
+    font-size: 13pt;
+}
+
+.titulo {
+    text-align: center;
+}

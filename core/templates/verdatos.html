@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{%static 'css/estilos.css'%}" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="{%static 'img/news.png'%}">
+    <title>Colaboradores</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-dark baralign">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{%static 'img/news.png'%}" width="70" height="60">
+        </a>
+
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'index' %}">Inicio</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'verdatos' %}">Datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'form_colabora' %}">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav> <br><br>
+    <h1 class="titulo">Colaboradores Registrados</h1> <br><br>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center;">Rut</th>
+                    <th scope="col" style="text-align: center;">Foto de perfil</th>
+                    <th scope="col" style="text-align: center;">Nombre completo</th>
+                    <th scope="col" style="text-align: center;">Teléfono</th>
+                    <th scope="col" style="text-align: center;">Dirección</th>
+                    <th scope="col" style="text-align: center;">Correo Eléctronico</th>
+                    <th scope="col" style="text-align: center;">País</th>
+                    <th scope="col" style="text-align: center;">Contraseña</th>
+                    <th scope="col" style="text-align: center;">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cob in colaboradores %}
+                <tr>
+                    <td style="text-align: center;"> {{cob.rut}} </td>
+                    <td style="text-align: center;"><img src="{{cob.fotop.url}}" class="img-fluid rounded" width="100px"
+                            height="100px"></td>
+                    <td style="text-align: center;"> {{cob.nombre}} </td>
+                    <td style="text-align: center;"> {{cob.celular}} </td>
+                    <td style="text-align: center;"> {{cob.direccion}} </td>
+                    <td style="text-align: center;"> {{cob.correo}} </td>
+                    <td style="text-align: center;"> {{cob.pais}} </td>
+                    <td style="text-align: center;"> {{cob.contraseña}} </td>
+                    <td style="text-align: center;"><a href="{% url 'mod_colabora' cob.rut %}">Modificar </a>ㅤ<a
+                            href="{% url 'del_colabora' cob.rut %}">Eliminar </a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

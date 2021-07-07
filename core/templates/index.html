@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link href="{%static 'css/estilos.css'%}" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="{%static 'img/news.png'%}">
+    <title>CAOS NEWS</title>
+</head>
+
+<body>
+    <!--Barra de navegación-->
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-dark baralign">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{%static 'img/news.png'%}" width="70" height="60">
+        </a>
+
+        <div class="collapse navbar-collapse" id="opciones">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'index' %}">Inicio</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'verdatos' %}">Datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="{% url 'form_colabora' %}">Registrarse</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <br><br>
+    <h1 class="titulo">Bienvenido a Caos News</h1>
+    <p style="text-align: center;">Tu lugar favorito de noticias importantes</p>
+    <br><br>
+
+    <!-- Carrusel-->
+    <div class="container">
+        <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{%static 'img/mundo.jpg'%}" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{%static 'img/guerra.jpg'%}" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{%static 'img/covid.jpg'%}" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{%static 'img/protesta.jpg'%}" alt="">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <h1 style="text-align: center;">Noticias Destacadas</h1> <br>
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://www.drjaviergonzalez.cl/wp-content/uploads/2020/03/coronavirus_1920x1080.jpg">
+                    <div class="card-body">
+                        <h4 class="card-title">COVID-19</h4>
+                        <p class="card-text">La enfermedad por coronavirus (COVID 19) es una ‎enfermedad infecciosa
+                            causada por un ‎coronavirus recientemente descubierto. ‎
+                            La mayoría de las personas que enferman de ‎COVID 19 experimentan síntomas de leves a
+                            ‎moderados y se recuperan sin tratamiento ‎especial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Manifestaciones en el Mundo</h4>
+                        <p class="card-text">En los últimos meses se ha producido un aumento aparentemente enorme de
+                            protestas en el mundo. Desde las calles de Hong Kong hasta La Paz, Quito, Barcelona, Beirut
+                            y Santiago de Chile, hemos presenciado una gigantesca marea de personas que toman las calles
+                            para ejercer su derecho a protestar y exigir el cambio a quienes están en el poder.
+
+                            Por desgracia, una característica común de estas protestas es la enorme dureza de la
+                            respuesta del Estado, que en muchos casos equivale a violaciones graves de los derechos
+                            humanos.</p>
+                    </div>
+                    <img class="card-img-bottom"
+                        src="https://noticieros.televisa.com/wp-content/uploads/2021/04/muere-al-menos-una-persona-tras-manifestaciones-contra-la-reforma-tributaria-en-colombia-foto-getty-images.jpg">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Javascript-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!--Footer-->
+    <footer>
+        <hr>
+
+    </footer>
+</body>
+
+
+</html>
